@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+
+body {
+  font: 16px/20px 'VT323', monospace;
+;
+  background-color:#e3ffe3
+}
+
+.intro{
+  padding:100px;
+   
+   background:rgba(0,0,0,0.1);
+   // height:300px;
+}
+
+// edited from https://codepen.io/ayamflow/pen/DCifh
+
+.glitch {
+    -webkit-animation: glitch 0.2s infinite;
+}
+
+$red: rgb(192, 20, 124);
+$blue: rgb(0, 170, 255);
+$yellow: rgb(255, 238, 0);
+$green: rgb(0, 255, 128);
+$colors: $red $blue $yellow $green;
+
+@mixin glitch {
+   $color: nth($colors, random(length($colors)));
+   text-shadow: random(10px) - 5px 0px 0px $color;
+   left: random(6px) - 3px;
+}
+
+@-webkit-keyframes glitch {
+  @for $i from 0 through 100 {
+    $percent: 0% + $i;
+    #{$percent} {
+      @include glitch;
+    }
+  }
+}
+
+button.button-primary{
+  background-color:#000;
+  border-radius:50%;
+  width:100px;
+  height:100px;
+  color: #fff;
+  border-color:#000;
+  float:right;
+  
+}
+
+
+button.button-primary:hover{
+  background-color:#333;
+  border-radius:50%;
+  width:100px;
+  height:100px;
+  color: #fff;
+  border-color:#000;
+  float:right;
+}
+
+
+button.button-primary:focus{
+  background-color:#000;
+  border-radius:50%;
+  width:100px;
+  height:100px;
+  color: #fff;
+  border-color:#000;
+  float:right;
+}
+
+
+button.button-primary:clicked{
+  background-color:#000;
+  border-radius:50%;
+  width:100px;
+  height:100px;
+  color: #fff;
+  border-color:#000;
+  float:right;
+  
+}
